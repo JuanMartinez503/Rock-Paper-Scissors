@@ -5,6 +5,10 @@
 
 This is a simple Java implementation of the classic Rock-Paper-Scissors (RPS) game. It allows a player to choose between rock, paper, and scissors, and then competes against the computer's randomly generated choice.
 
+## Screenshot
+![Screenshot 2023-09-01 at 1 29 23 PM](https://github.com/JuanMartinez503/Rock-Paper-Scissors/assets/116415860/d3899ac5-378c-40cb-b35d-2828bf0ba4d7)
+
+
 ## Table of Contents
 
 - [Installation](#installation)
