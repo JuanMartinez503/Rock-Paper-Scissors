@@ -4,11 +4,17 @@ import java.util.Scanner;
 
 public class RPS {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+                Scanner scan = new Scanner(System.in);
         System.out.println("\nWelcome to Rock Paper and Scissors!\n");
-        System.out.println("What would you choose? \nRock\nPaper\nScissors");
+
+        while(true){
+        System.out.println("What would you choose? \nRock\nPaper\nScissors\nExit to exit the game");
         //puts the playerChoice and saves it to a variable
         String playerChoice = scan.nextLine().toLowerCase();
+        if (playerChoice.equalsIgnoreCase("exit")) {
+            System.out.println("Exiting the game. Thanks for playing!");
+            break; // Exit the loop
+        }
         // stores the users input as a variable
         double numberIndex = (int) (Math.random() * 3);
 
@@ -18,7 +24,9 @@ public class RPS {
         System.out.println("\nPlayer chose " + playerChoice);
         System.out.println("Player chose " + computerChoice + "\n");
         choosingPath(playerChoice, computerChoice);
+        
 
+        }
         scan.close();
     }
     /*
@@ -41,6 +49,7 @@ public class RPS {
                 choosingWinner("scissors", computerChoice);
 
                 break;
+             
             default:
                 System.out.println("Choice is not a valid answer");
                 break;
@@ -55,6 +64,7 @@ public class RPS {
      */
 
     public static void choosingWinner(String playerChoice, String computerChoice) {
+        System.out.println("\n");
         if (playerChoice.equals(computerChoice)) {
             System.out.println("It's a tie!");
         } else if ((playerChoice.equals("rock") && computerChoice.equals("scissors")) ||
@@ -64,5 +74,7 @@ public class RPS {
         } else {
             System.out.println("Computer wins!");
         }
+                System.out.println("\n");
+
     }
 }
