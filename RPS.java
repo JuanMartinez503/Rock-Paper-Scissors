@@ -7,17 +7,26 @@ public class RPS {
         Scanner scan = new Scanner(System.in);
         System.out.println("\nWelcome to Rock Paper and Scissors!\n");
         System.out.println("What would you choose? \nRock\nPaper\nScissors");
+        //puts the playerChoice and saves it to a variable
         String playerChoice = scan.nextLine().toLowerCase();
+        // stores the users input as a variable
         double numberIndex = (int) (Math.random() * 3);
 
         String[] choicesArray = { "rock", "paper", "scissors" };
         String computerChoice = choicesArray[(int) numberIndex];
-        System.out.println("Player chose " + playerChoice);
+
+        System.out.println("\nPlayer chose " + playerChoice);
         System.out.println("Player chose " + computerChoice + "\n");
         choosingPath(playerChoice, computerChoice);
 
         scan.close();
     }
+    /*
+     * Function name: choosingPath- chooses a path based on the answer of the user,
+     * it designed mostly to account for the user not choosing a correct path
+     * 
+     * @params choice (String), computerChoice(String)
+     */
 
     public static void choosingPath(String choice, String computerChoice) {
         switch (choice) {
@@ -38,6 +47,12 @@ public class RPS {
 
         }
     }
+    /*
+     * Function name: choosingWinner- chooses the winner based on the answer of the player and the randomly selected answer of the computer
+     * 
+     * @params playerChoice (String) , computerChoice (String)
+     * 
+     */
 
     public static void choosingWinner(String playerChoice, String computerChoice) {
         if (playerChoice.equals(computerChoice)) {
